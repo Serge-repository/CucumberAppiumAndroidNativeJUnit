@@ -70,12 +70,5 @@ public class Hooks {
     private void initializeDriver() {
         appiumDriver = new AndroidDriver<>(serverAddress, capabilities);
         wait = new WebDriverWait(appiumDriver, 10);
-//        initializeClasses();
     }
-
-//    private void initializeClasses() {
-//        homeView = new HomeView(appiumDriver, wait);
-//        viewsView = new ViewsView(appiumDriver, wait);
-//        textFieldsView = new TextFieldsView(appiumDriver, wait);
-//    }
 }

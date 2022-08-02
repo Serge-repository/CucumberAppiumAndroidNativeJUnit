@@ -1,13 +1,10 @@
 package utils;
 
-import GeneralSetup.TestBasisMobile;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.appmanagement.AndroidInstallApplicationOptions;
 import io.appium.java_client.android.appmanagement.AndroidTerminateApplicationOptions;
 
 import java.time.Duration;
-
-import static GeneralSetup.TestBasisMobile.appiumDriver;
 
 public class ActionsWithDeviceAndApp {
     public void terminateApp(Duration duration){

@@ -7,6 +7,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -79,11 +80,11 @@ public class HomeView extends DataManagement {
         views.click();
     }
 
-//    public void validateAccessibilityElementByAttribute() {
-//        System.out.println(getElementAttribute(accessibilityButton, "text"));
-//        assertEquals(getElementAttribute(accessibilityButton, "text"), "Accessibility", "Element text is not correct");
-//        assertFalse(accessibilityButton.isSelected(), "Button is selected already");
-//    }
+    public void validateAccessibilityElementByAttribute() {
+        System.out.println(getElementAttribute(accessibilityButton, "text"));
+        Assert.assertEquals(getElementAttribute(accessibilityButton, "text"), "Accessibility", "Element text is not correct");
+        Assert.assertFalse("Button is selected already", accessibilityButton.isSelected());
+    }
 
     public void clickOnMyElement() {
         getWaitUtils().myElementExplicitWait(views);

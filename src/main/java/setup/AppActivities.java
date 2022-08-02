@@ -1,4 +1,4 @@
-package GeneralSetup;
+package setup;
 
 public enum AppActivities {
     HOME_VIEW("io.appium.android.apis.ApiDemos"),
