@@ -2,7 +2,7 @@ package utils;
 
 import io.appium.java_client.MobileElement;
 
-import static cucumber_step_defs.Hooks.appiumDriver;
+import static cucumber_step_defs.TestBasis.appiumDriver;
 
 public class CustomElement {
 

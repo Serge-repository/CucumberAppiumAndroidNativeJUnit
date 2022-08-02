@@ -8,7 +8,7 @@ import org.openqa.selenium.NoSuchElementException;
 
 import java.util.List;
 
-import static cucumber_step_defs.Hooks.appiumDriver;
+import static cucumber_step_defs.TestBasis.appiumDriver;
 
 public class MyElement {
     String name;

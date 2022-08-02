@@ -16,7 +16,7 @@ import views.ViewsView;
 import java.io.File;
 import java.net.URL;
 
-public class Hooks {
+public class TestBasis {
     public static AppiumDriver<MobileElement> appiumDriver;
     public static WebDriverWait wait;
 

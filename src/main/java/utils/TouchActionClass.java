@@ -8,7 +8,7 @@ import io.appium.java_client.touch.offset.PointOption;
 
 import java.time.Duration;
 
-import static cucumber_step_defs.Hooks.appiumDriver;
+import static cucumber_step_defs.TestBasis.appiumDriver;
 
 public class TouchActionClass {
     public final TouchAction touchAction = new TouchAction(appiumDriver);

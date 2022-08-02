@@ -10,8 +10,6 @@ import utils.MyElement;
 
 public class ViewsView extends DataManagement {
 
-//    protected BottomMenuFragment bottomMenuFragment = new BottomMenuFragment(appiumDriver, wait, element);
-
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"TextFields\")")
     private MobileElement textFieldOption;
     private final MyElement galleryImage = new MyElement("Gallery image", MobileBy.className("android.widget.ImageView"));

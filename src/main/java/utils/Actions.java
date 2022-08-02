@@ -4,7 +4,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.ElementOption;
 
-import static cucumber_step_defs.Hooks.appiumDriver;
+import static cucumber_step_defs.TestBasis.appiumDriver;
 
 public class Actions {
     private final TouchAction touchAction = new TouchAction(appiumDriver);

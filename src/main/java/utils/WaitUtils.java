@@ -5,8 +5,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.concurrent.TimeUnit;
 
-import static cucumber_step_defs.Hooks.appiumDriver;
-import static cucumber_step_defs.Hooks.wait;
+import static cucumber_step_defs.TestBasis.appiumDriver;
+import static cucumber_step_defs.TestBasis.wait;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 

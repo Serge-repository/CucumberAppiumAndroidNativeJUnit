@@ -6,19 +6,21 @@ import io.appium.java_client.android.appmanagement.AndroidTerminateApplicationOp
 
 import java.time.Duration;
 
+import static cucumber_step_defs.TestBasis.*;
+
 public class ActionsWithDeviceAndApp {
     public void terminateApp(Duration duration){
-        appiumDriver.terminateApp(TestBasisMobile.appPackage, new AndroidTerminateApplicationOptions()
+        appiumDriver.terminateApp(appPackage, new AndroidTerminateApplicationOptions()
                 .withTimeout(Duration.ofMillis(duration.toMillis()))); // time to wait until app terminated
     }
 
     public void installApp(){
-        appiumDriver.installApp(TestBasisMobile.appPath, new AndroidInstallApplicationOptions()
+        appiumDriver.installApp(appPath, new AndroidInstallApplicationOptions()
                 .withReplaceEnabled()); // allows to update apps with new versions
     }
 
 //    public void checkIfAppInstalled() {
-//        assertTrue(appiumDriver.isAppInstalled(TestBasisMobile.appPackage));
+//        assertEquals(appiumDriver.isAppInstalled(appPackage));
 //    }
 
     public void runAppInBackground() {
