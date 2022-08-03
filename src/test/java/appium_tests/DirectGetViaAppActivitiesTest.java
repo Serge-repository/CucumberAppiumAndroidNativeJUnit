@@ -1,6 +1,6 @@
 //package appium_tests;
 //
-//import setup.AppActivities;
+//import GeneralSetup.AppActivities;
 //import GeneralSetup.TestBasisMobile;
 //import io.appium.java_client.android.nativekey.AndroidKey;
 //import org.testng.annotations.BeforeMethod;

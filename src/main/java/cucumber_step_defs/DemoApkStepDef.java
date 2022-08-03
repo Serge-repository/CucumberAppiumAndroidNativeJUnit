@@ -1,19 +1,26 @@
 package cucumber_step_defs;
 
+import GeneralSetup.ViewsInitializer;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import views.HomeView;
-import views.TextFieldsView;
-import views.ViewsView;
 
-import static cucumber_step_defs.TestBasis.appiumDriver;
-import static cucumber_step_defs.TestBasis.wait;
+import java.time.Duration;
 
-public class DemoApkStepDef {
+import static cucumber_step_defs.TestBasis.appPackage;
 
-    private final HomeView homeView = new HomeView(appiumDriver, wait);
-    private final ViewsView viewsView = new ViewsView(appiumDriver, wait);
-    private final TextFieldsView textFieldsView = new TextFieldsView(appiumDriver, wait);
+public class DemoApkStepDef extends ViewsInitializer {
+
+    @Given("user terminates app")
+    public void userTerminatesApp() {
+        viewsView.getActionsWithDeviceAndApp().terminateApp(Duration.ofMillis(2000));
+    }
+
+    @When("user activates and terminates app again")
+    public void userActivatesAndTerminatesAppAgain() {
+        viewsView.getActionsWithDeviceAndApp().activateApp("com.android.settings");
+        viewsView.getActionsWithDeviceAndApp().terminateApp(Duration.ofMillis(2000));
+    }
 
     @When("user navigates to views page")
     public void navigateToViewsPage() {
@@ -27,5 +34,10 @@ public class DemoApkStepDef {
         viewsView.getTouchAction().scrollAction(448, 1752, 551, 389);
         viewsView.selectTextFieldsOption();
         textFieldsView.enterTextIntoHintField();
+    }
+
+    @Then("user is able install app again")
+    public void userIsAbleInstallAppAgain() {
+        viewsView.getActionsWithDeviceAndApp().activateApp(appPackage);
     }
 }

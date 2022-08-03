@@ -1,6 +1,6 @@
 //package appium_tests;
 //
-//import setup.AppActivities;
+//import GeneralSetup.AppActivities;
 //import GeneralSetup.TestBasisMobile;
 //import org.testng.annotations.BeforeMethod;
 //import org.testng.annotations.Test;

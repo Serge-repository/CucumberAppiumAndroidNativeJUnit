@@ -9,9 +9,6 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import views.HomeView;
-import views.TextFieldsView;
-import views.ViewsView;
 
 import java.io.File;
 import java.net.URL;
@@ -23,10 +20,6 @@ public class TestBasis {
     private DesiredCapabilities capabilities = new DesiredCapabilities();
     private URL serverAddress;
     private AppiumDriverLocalService service;
-
-    public HomeView homeView;
-    public ViewsView viewsView;
-    public TextFieldsView textFieldsView;
 
     public static String appPackage = "io.appium.android.apis";
     public static String appPath;
