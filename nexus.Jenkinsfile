@@ -28,10 +28,10 @@ pipeline {
             steps {
                 script {
                     if ( !TAGS.isEmpty() ) {
-                        bat "mvn clean test -Dcucumber.filter.tags=${TAGS} -Ddevice='nexus' -Dforks=${params.forks}"
+                        bat "mvn clean test -Dcucumber.filter.tags=${TAGS} -Ddevice=${params.device} -Dforks=${params.forks}"
                     }
                     if ( !FEATURE_CLASS.isEmpty() ) {
-                        bat "mvn clean test -Dcucumber.options=${FEATURE_CLASS} -Ddevice='nexus' -Dforks=${params.forks}"
+                        bat "mvn clean test -Dcucumber.options=${FEATURE_CLASS} -Ddevice=${params.device} -Dforks=${params.forks}"
                     }
                 }
             }
