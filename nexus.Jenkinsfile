@@ -19,6 +19,7 @@ pipeline {
                             Leave this field empty if you want to run tags.
                             ''')
         string(name: 'forks', defaultValue: '1', description: 'Number of parallel threads')
+        string(name: 'device', defaultValue: 'nexus', description: 'Tests run on nexus')
     }
 
     stages {

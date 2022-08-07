@@ -19,6 +19,7 @@ pipeline {
                             Leave this field empty if you want to run tags.
                             ''')
         string(name: 'forks', defaultValue: '1', description: 'Number of parallel threads')
+        string(name: 'device', defaultValue: 'pixel', description: 'Tests run on pixel')
     }
 
     stages {
@@ -27,10 +28,10 @@ pipeline {
             steps {
                 script {
                     if ( !TAGS.isEmpty() ) {
-                        bat "mvn clean test -Dcucumber.filter.tags=${TAGS} -Ddevice='pixel' -Dforks=${params.forks}"
+                        bat "mvn clean test -Dcucumber.filter.tags=${TAGS} -Ddevice=${params.device} -Dforks=${params.forks}"
                     }
                     if ( !FEATURE_CLASS.isEmpty() ) {
-                        bat "mvn clean test -Dcucumber.options=${FEATURE_CLASS} -Ddevice='pixel' -Dforks=${params.forks}"
+                        bat "mvn clean test -Dcucumber.options=${FEATURE_CLASS} -Ddevice=${params.device} -Dforks=${params.forks}"
                     }
                 }
             }
