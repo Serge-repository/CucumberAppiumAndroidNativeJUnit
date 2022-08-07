@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -47,6 +48,7 @@ public class TestBasis {
         capabilities.setCapability("unlockKey", "0000");
         capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
 
+        service = new AppiumServiceBuilder().usingPort(Integer.valueOf(port)).build();
         serverAddress = new URL("http://127.0.0.1:" + port + "/wd/hub");
         service.start();
         initializeDriver();
