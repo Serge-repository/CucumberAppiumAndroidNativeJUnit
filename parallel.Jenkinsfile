@@ -25,7 +25,7 @@ pipeline {
 
         stage('Execute tests'){
             steps {
-//                 script {
+                script {
                     if ( !TAGS.isEmpty() ) {
                         script {
                             bat "mvn clean test -Dcucumber.filter.tags=${TAGS} -Ddevice="pixel" -Dforks=${params.forks}"
@@ -42,7 +42,7 @@ pipeline {
                             bat "mvn clean test -Dcucumber.options=${FEATURE_CLASS} -Ddevice="nexus" -Dforks=${params.forks}"
                         }
                     }
-//                 }
+                }
             }
         }
     }
