@@ -23,6 +23,7 @@ public class TestBasis {
 
     public static String appPackage = "io.appium.android.apis";
     public static String appPath;
+    public static String port;
     public static String device = System.getProperty("device", "nexus");
 
     @Before
@@ -46,7 +47,7 @@ public class TestBasis {
         capabilities.setCapability("unlockKey", "0000");
         capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
 
-        serverAddress = new URL("http://127.0.0.1:4723/wd/hub");
+        serverAddress = new URL("http://127.0.0.1:" + port + "/wd/hub");
         service.start();
         initializeDriver();
     }
@@ -56,10 +57,12 @@ public class TestBasis {
             case "pixel": capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 4 API 30");
                 capabilities.setCapability(MobileCapabilityType.UDID, "emulator-5554");
                 capabilities.setCapability("avd", "Pixel_4_API_30");
+                port="4723";
                 break;
             case "nexus": capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Nexus 5X API 31");
                 capabilities.setCapability(MobileCapabilityType.UDID, "emulator-5556");
                 capabilities.setCapability("avd", "Nexus_5X_API_31");
+                port="4724";
                 break;
         }
     }
