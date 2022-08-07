@@ -23,12 +23,12 @@ public class TestBasis {
 
     public static String appPackage = "io.appium.android.apis";
     public static String appPath;
+    public static String device = System.getProperty("device", "nexus");
 
     @Before
-    public void beforeClassSingleDeviceRun() throws Exception {
+    public void deviceStart() throws Exception {
         service = AppiumDriverLocalService.buildDefaultService();
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 4 API 30");
-        capabilities.setCapability(MobileCapabilityType.UDID, "emulator-5554");
+        deviceChoose();
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 1000);
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
@@ -37,8 +37,7 @@ public class TestBasis {
                 + File.separator + "resources" + File.separator + "ApiDemos-debug.apk";
         capabilities.setCapability(MobileCapabilityType.APP, appPath);
         // для автоматического запуска эмулятора
-        capabilities.setCapability("avd", "Pixel_4_API_30");
-        capabilities.setCapability("avdLaunchTimeout", 180000);  //3 minutes
+        capabilities.setCapability("avdLaunchTimeout", 200000);
         // сколько сохранять активность сессии в дебаге
         capabilities.setCapability("newCommandTimeout", 300);  //5 minutes
         capabilities.setCapability("appPackage", appPackage);
@@ -46,12 +45,23 @@ public class TestBasis {
         capabilities.setCapability("unlockType", "pin");
         capabilities.setCapability("unlockKey", "0000");
         capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
-//        capabilities.setCapability("unlockType", "pattern");
-//        capabilities.setCapability("unlockKey", "125478963"); // каждая точка паттерна это определенная цифра
 
         serverAddress = new URL("http://127.0.0.1:4723/wd/hub");
         service.start();
         initializeDriver();
+    }
+
+    private void deviceChoose() {
+        switch (device){
+            case "pixel": capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 4 API 30");
+                capabilities.setCapability(MobileCapabilityType.UDID, "emulator-5554");
+                capabilities.setCapability("avd", "Pixel_4_API_30");
+                break;
+            case "nexus": capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Nexus 5X API 31");
+                capabilities.setCapability(MobileCapabilityType.UDID, "emulator-5556");
+                capabilities.setCapability("avd", "Nexus_5X_API_31");
+                break;
+        }
     }
 
     @After
