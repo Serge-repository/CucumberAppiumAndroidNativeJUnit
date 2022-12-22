@@ -1,0 +1,28 @@
+{
+  "iPhone_13_local": {
+    "deviceName": "iPhone 13 Pro Max",
+    "udid": "DF3EBAD2-4ABC-406D-B468-6D13436DB53E",
+    "platformName": "iOS",
+    "automationName": "XCUITest",
+    "appName": "UIKitCatalog-iphonesimulator.app",
+    "wdaBundleId": "com.example.apple-samplecode.UICatalog"
+  },
+  "android_Pixel4_local": {
+    "deviceName": "Pixel 4 API 30",
+    "udid": "emulator-5554",
+    "platformName": "Android",
+    "automationName": "UiAutomator2",
+    "appName": "ApiDemos-debug.apk",
+    "appPackage": "io.appium.android.apis",
+    "avdName": "Pixel_4_API_30"
+  },
+  "android_Nexus5X_local": {
+    "deviceName": "Nexus 5X API 31",
+    "udid": "emulator-5556",
+    "platformName": "Android",
+    "automationName": "UiAutomator2",
+    "appName": "ApiDemos-debug.apk",
+    "appPackage": "io.appium.android.apis",
+    "avdName": "Nexus_5X_API_31"
+  }
+}
