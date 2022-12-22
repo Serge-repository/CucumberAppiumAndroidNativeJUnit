@@ -1,4 +1,4 @@
-package cucumber_step_defs;
+package cucumber_step_defs.android;
 
 import GeneralSetup.ViewsInitializerAndroid;
 import io.cucumber.java.en.Given;
@@ -9,7 +9,7 @@ import java.time.Duration;
 
 import static cucumber_step_defs.TestBasis.appPackage;
 
-public class DemoApkStepDef extends ViewsInitializerAndroid {
+public class AndroidApkDemoStepDef extends ViewsInitializerAndroid {
 
     @Given("user terminates app")
     public void userTerminatesApp() {

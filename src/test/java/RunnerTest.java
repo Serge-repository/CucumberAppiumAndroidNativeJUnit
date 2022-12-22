@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        glue = "cucumber_step_defs",  // Можно указать несколько пакетов, например, так: glue = {«com.serge.test», «com.serge.hooks»}
+        glue = "cucumber_step_defs",  // Можно указать несколько папок, например, так: glue = {«com.serge.test», «com.serge.hooks»}
 
 // Uncomment for local run
 //        tags = "@Smoke",           //указав тег, можем тут же запускать сьют ЛОКАЛЬНО через RunnerTest
