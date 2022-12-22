@@ -25,7 +25,7 @@ public class TestBasis {
     public static String appPackage = "io.appium.android.apis";
     public static String appPath;
     public static String port;
-    public static String device = System.getProperty("device", "nexus");
+    public static String device = System.getProperty("device", "pixel");
 
     @Before
     public void deviceStart() throws Exception {
