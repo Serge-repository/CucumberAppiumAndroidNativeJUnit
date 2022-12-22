@@ -1,8 +1,8 @@
 package GeneralSetup;
 
-import views.HomeView;
-import views.TextFieldsView;
-import views.ViewsView;
+import views.android.HomeView;
+import views.android.TextFieldsView;
+import views.android.ViewsView;
 
 import static cucumber_step_defs.TestBasis.*;
 

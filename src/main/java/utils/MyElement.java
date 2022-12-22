@@ -29,6 +29,14 @@ public class MyElement {
         }
     }
 
+    public String getText() {
+            return appiumDriver.findElement(locator).getText();
+    }
+
+    public void sendKeys(String text) {
+        appiumDriver.findElement(locator).sendKeys(text);
+    }
+
     public void click(){
         log.debug("Going to click " + name + " element");
         try {

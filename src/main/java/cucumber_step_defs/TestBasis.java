@@ -36,7 +36,7 @@ public class TestBasis {
     public static String appPath;
     public static String port;
 
-    public static String platformSelector = System.getProperty("platform", "Android_emulator");
+    public static String platformSelector = System.getProperty("platform", "iOS_emulator");
 
     @Before
     public void deviceStart() throws Exception {
