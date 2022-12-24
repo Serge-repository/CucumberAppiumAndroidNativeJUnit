@@ -34,9 +34,8 @@ public class TestBasis {
 
     public static String appPackage = "io.appium.android.apis";
     public static String appPath;
-    public static String port;
 
-    public static String platformSelector = System.getProperty("platform", "iOS_emulator");
+    public static String platformSelector = System.getProperty("platform", "Android_emulator");
 
     @Before
     public void deviceStart() throws Exception {
