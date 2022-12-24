@@ -1,4 +1,4 @@
-@Smoke
+@Smoke @Android
 Feature: Demo
 
   Scenario: Login as a authenticated user

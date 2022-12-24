@@ -1,4 +1,4 @@
-@Smoke
+@Smoke @iOS
 Feature: iOS app demo
 
   Scenario: Test different selectors strategies
