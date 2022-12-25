@@ -6,11 +6,12 @@ pipeline {
 
     parameters {
         string(name: 'branch', defaultValue: 'master', description: 'Branch to checkout')
-        string(name: 'TAGS', defaultValue: '@Smoke',
+        string(name: 'TAGS', defaultValue: '@Android',
             description: '''Cucumber tags to be executed. Examples:
-                            @Regression,
-                            @Sanity.
-                            Leave this field empty if you want to run single feature class.
+                            @Android,
+                            @Smoke @Android,
+                            @iOS
+                            Since this framework contains different apps for Android and iOS, always use tags to choose platform.
                             ''')
         string(name: 'FEATURE_CLASS', defaultValue: "src/test/resources/features/android/AndroidApkDemo.feature",
             description: '''Select feature class to execute. Examples:
