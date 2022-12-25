@@ -12,10 +12,10 @@ pipeline {
                             @Sanity.
                             Leave this field empty if you want to run single feature class.
                             ''')
-        string(name: 'FEATURE_CLASS', defaultValue: "src/test/resources/features/demoApk.feature",
+        string(name: 'FEATURE_CLASS', defaultValue: "src/test/resources/features/android/AndroidApkDemo.feature",
             description: '''Select feature class to execute. Examples:
-                            src/test/resources/features/views.feature,
-                            src/test/resources/features/activities.feature.
+                            src/test/resources/features/android/Demo.feature,
+                            src/test/resources/features/android/Test.feature.
                             Leave this field empty if you want to run tags.
                             ''')
         string(name: 'forks', defaultValue: '1', description: 'Number of parallel threads')
