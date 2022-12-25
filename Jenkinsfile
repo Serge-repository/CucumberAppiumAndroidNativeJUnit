@@ -17,7 +17,7 @@ pipeline {
             description: '''Select feature class to execute. Examples:
                             src/test/resources/features/android/Demo.feature,
                             src/test/resources/features/android/Test.feature.
-                            Leave this field empty if you want to run tags.
+
                             ''')
         string(name: 'forks', defaultValue: '1', description: 'Number of parallel threads')
         choice(name: 'device', choices: ['android_Pixel4_local', 'android_Nexus5X_local'], description: 'Tests run on exact device')
@@ -28,12 +28,10 @@ pipeline {
         stage('Execute tests'){
             steps {
                 script {
-                    if ( !TAGS.isEmpty() ) {
-                        bat "mvn clean test -Dcucumber.filter.tags=${TAGS} -Ddevice=${params.device} -Dforks=${params.forks}"
-                    }
-                    if ( !FEATURE_CLASS.isEmpty() ) {
-                        bat "mvn clean test -Dcucumber.options=${FEATURE_CLASS} -Ddevice=${params.device} -Dforks=${params.forks}"
-                    }
+
+
+                        bat "mvn clean test -Dcucumber.options=${FEATURE_CLASS} -Dcucumber.filter.tags=${TAGS} -Ddevice=${params.device} -Dforks=${params.forks}"
+
                 }
             }
         }
