@@ -19,7 +19,7 @@ pipeline {
                             Leave this field empty if you want to run tags.
                             ''')
         string(name: 'forks', defaultValue: '1', description: 'Number of parallel threads')
-        choice(name: 'device', choices: ['pixel', 'nexus'], description: 'Tests run on exact device')
+        choice(name: 'device', choices: ['android_Pixel4_local', 'android_Nexus5X_local'], description: 'Tests run on exact device')
     }
 
     stages {
