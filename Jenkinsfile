@@ -9,7 +9,7 @@ pipeline {
         string(name: 'TAGS', defaultValue: '@Android',
             description: '''Cucumber tags to be executed. Examples:
                             @Android,
-                            @Smoke @Android,
+                            "@Android and @Smoke",
                             @iOS
                             Since this framework contains different apps for Android and iOS, always use tags to choose platform.
                             ''')
