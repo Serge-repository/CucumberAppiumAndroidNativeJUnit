@@ -6,20 +6,20 @@ pipeline {
 
     parameters {
         string(name: 'branch', defaultValue: 'master', description: 'Branch to checkout')
-        string(name: 'TAGS', defaultValue: '@Smoke',
+        string(name: 'TAGS', defaultValue: '@Android',
             description: '''Cucumber tags to be executed. Examples:
-                            @Regression,
-                            @Sanity.
-                            Leave this field empty if you want to run single feature class.
+                            @Android,
+                            "@Android and @Smoke",
+                            @iOS
+                            Since this framework contains different apps for Android and iOS, always use tags to choose platform.
                             ''')
-        string(name: 'FEATURE_CLASS', defaultValue: "src/test/resources/features/demoApk.feature",
+        string(name: 'FEATURE_CLASS', defaultValue: "src/test/resources/features/android/AndroidApkDemo.feature",
             description: '''Select feature class to execute. Examples:
-                            src/test/resources/features/views.feature,
-                            src/test/resources/features/activities.feature.
-                            Leave this field empty if you want to run tags.
+                            src/test/resources/features/android/Demo.feature,
+                            src/test/resources/features/android/Test.feature.
+                            In this particular framework use features with tags
                             ''')
         string(name: 'forks', defaultValue: '1', description: 'Number of parallel threads')
-        string(name: 'device', defaultValue: 'nexus', description: 'Tests run on nexus')
     }
 
     stages {
@@ -27,12 +27,7 @@ pipeline {
         stage('Execute tests'){
             steps {
                 script {
-                    if ( !TAGS.isEmpty() ) {
-                        bat "mvn clean test -Dcucumber.filter.tags=${TAGS} -Ddevice=${params.device} -Dforks=${params.forks}"
-                    }
-                    if ( !FEATURE_CLASS.isEmpty() ) {
-                        bat "mvn clean test -Dcucumber.options=${FEATURE_CLASS} -Ddevice=${params.device} -Dforks=${params.forks}"
-                    }
+                    bat "mvn clean test -Dcucumber.options=${FEATURE_CLASS} -Dcucumber.filter.tags=${TAGS} -Ddevice=android_Nexus5X_local -Dforks=${params.forks}"
                 }
             }
         }
